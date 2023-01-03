@@ -19,8 +19,16 @@ pnpm install
 
 ## Usage
 
+web:
+
 ```sh
 pnpm run dev
+```
+
+native-app:
+
+```sh
+pnpm run dev:tauri
 ```
 
 ## Author
