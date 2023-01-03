@@ -43,6 +43,3 @@ jobs:
 
       - name: Export
         run: pnpm export
-
-      - name: Compile
-        run: pnpm build:tauri
