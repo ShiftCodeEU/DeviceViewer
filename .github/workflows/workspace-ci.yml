@@ -35,8 +35,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Lint
+        run: pnpm lint
+
       - name: Build
         run: pnpm build
 
-      - name: Lint
-        run: pnpm lint
+      - name: Export
+        run: pnpm export
+
+      - name: Compile
+        run: pnpm build:tauri
