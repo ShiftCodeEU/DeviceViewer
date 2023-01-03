@@ -7,10 +7,11 @@
     "dev": "next dev",
     "dev:tauri": "tauri dev",
     "build": "next build",
-    "build:tauri": "pnpm tauri build",
+    "build:tauri": "tauri build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "bx:next": "next build && next export"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
