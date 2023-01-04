@@ -1,23 +1,14 @@
-extern crate hyper;
-
 #![cfg_attr(
     all(not(debug_assertions), target_os = "windows"),
     windows_subsystem = "windows"
 )]
 
+#[path = "./commands/getLocalDevices.rs"]
+mod get_local_iungos;
+
 fn main() {
     tauri::Builder::default()
+        .invoke_handler(tauri::generate_handler![get_local_iungos::query])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
-}
-
-#[tauri::command]
-fn getLocalIungos(iprange: Box<[i32]>) {
-    let client = Client::new();
-    let availableClients: Box<[i32]> = Box::new([]);
-    let res = client.get("http://example.domain").send().unwrap();
-
-    for current in 0..iprange.len() {
-        println!("{}", lang[current]);
-    }
 }
