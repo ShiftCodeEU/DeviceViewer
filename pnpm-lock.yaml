@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@tauri-apps/api': ^1.2.0
   '@tauri-apps/cli': ^1.2.2
+  '@types/ip': ^1.1.0
   '@types/node': ^18.11.18
   '@types/prettier': ^2.7.2
   '@types/react': ^18.0.26
@@ -24,7 +24,6 @@ specifiers:
   zod: ^3.20.2
 
 dependencies:
-  '@tauri-apps/api': 1.2.0
   ip: 1.1.8
   next: 13.1.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -33,6 +32,7 @@ dependencies:
 
 devDependencies:
   '@tauri-apps/cli': 1.2.2
+  '@types/ip': 1.1.0
   '@types/node': 18.11.18
   '@types/prettier': 2.7.2
   '@types/react': 18.0.26
@@ -272,11 +272,6 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@tauri-apps/api/1.2.0:
-    resolution: {integrity: sha512-lsI54KI6HGf7VImuf/T9pnoejfgkNoXveP14pVV7XarrQ46rOejIVJLFqHI9sRReJMGdh2YuCoI3cc/yCWCsrw==}
-    engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
-    dev: false
-
   /@tauri-apps/cli-darwin-arm64/1.2.2:
     resolution: {integrity: sha512-W+Cp2weUMlvmGkRJeUjypbz9Lpl6o98xkgKAtobZSum5SNwpsBQfawJTESakNoD+FXyVg/snIk5sRdHge+tAaA==}
     engines: {node: '>= 10'}
@@ -372,6 +367,12 @@ packages:
       '@tauri-apps/cli-linux-x64-musl': 1.2.2
       '@tauri-apps/cli-win32-ia32-msvc': 1.2.2
       '@tauri-apps/cli-win32-x64-msvc': 1.2.2
+    dev: true
+
+  /@types/ip/1.1.0:
+    resolution: {integrity: sha512-dwNe8gOoF70VdL6WJBwVHtQmAX4RMd62M+mAB9HQFjG1/qiCLM/meRy95Pd14FYBbEDwCq7jgJs89cHpLBu4HQ==}
+    dependencies:
+      '@types/node': 18.11.18
     dev: true
 
   /@types/json-schema/7.0.11:
