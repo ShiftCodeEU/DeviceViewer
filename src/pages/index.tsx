@@ -1,10 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 
-import ApiInvoke from "../utils/api/invoke";
+import deviceWorker from "../utils/worker/devices";
 
 const Home: NextPage = () => {
-  ApiInvoke("query");
+  deviceWorker();
 
   return (
     <>
