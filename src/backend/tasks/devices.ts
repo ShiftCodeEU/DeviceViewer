@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import ip from "ip";
 
-const get = async () => {
+export const devicesArray: string[] = [];
+
+export const Get = async () => {
   const localIP = ip.address();
   const localIPPartial = localIP.toString().substring(0, localIP.length - 1);
   const isPrivate = ip.isPrivate(localIP);
-
-  const devicesArray: string[] = [];
 
   let subnet: ip.SubnetInfo | null = null;
 
@@ -15,39 +15,36 @@ const get = async () => {
   }
 
   if (typeof window !== "undefined") {
-    const checkDevice = (ip: string) => {
-      fetch(ip, {
-        method: "GET",
-        cache: "no-cache",
-        headers: {
-          "Cache-Control": "no-cache, no-store, must-revalidate",
-          Pragma: "no-cache",
-        },
-      })
-        .then((response) => response.text())
-        .then(async (responseText) => {
-          if (responseText.includes("url=/iungo/app")) {
-            devicesArray.push(ip);
-          } else {
-            return;
-          }
-        })
-        .catch(() => {
-          return;
-        });
-    };
-
-    if (subnet !== null) {
-      for (
-        let i = ip.toLong(subnet.firstAddress);
-        i < ip.toLong(subnet.lastAddress) + 1;
-        i++
-      ) {
-        const currentIP = ip.fromLong(i);
-        checkDevice(currentIP);
+    const fetchDeviceResponse = async () => {
+      if (subnet !== null) {
+        for (
+          let i = ip.toLong(subnet.firstAddress);
+          i < ip.toLong(subnet.lastAddress) + 1;
+          i++
+        ) {
+          const currentIP = ip.fromLong(i);
+          devicesArray.push(currentIP);
+        }
       }
-    }
+    };
+    fetchDeviceResponse();
   }
   return devicesArray;
 };
-get();
+
+export const Check = async () => {
+  if (devicesArray.length < 1) {
+    await Get();
+  }
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const invoke = require("@tauri-apps/api").invoke;
+    return invoke("fetch_devices", {
+      ipAddresses: devicesArray,
+    })
+      .then((res: any) =>
+        console.log(`Message: ${res.message}, Other Val: ${res.other_val}`)
+      )
+      .catch((e: any) => console.error("CheckError:", e));
+  }
+};

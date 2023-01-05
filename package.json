@@ -1,5 +1,5 @@
 {
-  "name": "iungo-desktop-app",
+  "name": "device-viewer",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "bx:next": "next build && next export"
   },
   "dependencies": {
+    "@tauri-apps/api": "^1.2.0",
     "ip": "^1.1.8",
     "next": "13.1.1",
     "react": "18.2.0",
