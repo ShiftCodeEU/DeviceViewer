@@ -1,9 +1,14 @@
-import { type AppType } from "next/dist/shared/lib/utils";
-
 import "../styles/globals.css";
 
-const NextApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
+import { type AppType } from "next/dist/shared/lib/utils";
 
+import { StoreProvider } from "../backend/tasks/store";
+
+const NextApp: AppType = ({ Component, pageProps }) => {
+  return (
+    <StoreProvider>
+      <Component {...pageProps} />
+    </StoreProvider>
+  );
+};
 export default NextApp;

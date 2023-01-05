@@ -1,8 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type NextPage } from "next";
 import Head from "next/head";
+// import { useContext, useEffect } from "react";
+
+// import { StoreContext, useStore } from "../backend/tasks/store";
 
 const Home: NextPage = () => {
+  // const [store, setStore] = useStore();
+
   return (
     <>
       <Head>
