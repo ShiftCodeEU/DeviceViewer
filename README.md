@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to IungoDesktopApp 👋</h1>
+<h1 align="center">Welcome to Device Viewer 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <a href=https://github.com/GlitchTech-Developments/DeviceViewer/blob/main/LICENCE" target="_blank">
@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> Desktop app for connecting to your iungo controller(s)
+> Desktop app for connecting to your local web-UI devices
 
 ## Install
 
