@@ -1,14 +1,14 @@
 <h1 align="center">Welcome to IungoDesktopApp 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/JesseKoldewijn/IungoDesktopApp/blob/main/LICENCE" target="_blank">
+  <a href=https://github.com/GlitchTech-Developments/DeviceViewer/blob/main/LICENCE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <!-- <a href="#" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a> -->
-  <a href="https://github.com/JesseKoldewijn/IungoDesktopApp/actions/workflows/workspace-ci.yml">
-    <img src="https://github.com/JesseKoldewijn/IungoDesktopApp/actions/workflows/workspace-ci.yml/badge.svg" alt="CI">
+  <a href=https://github.com/GlitchTech-Developments/DeviceViewer/actions/workflows/workspace-ci.yml">
+    <img src=https://github.com/GlitchTech-Developments/DeviceViewer/actions/workflows/workspace-ci.yml/badge.svg" alt="CI">
   </a>
 </p>
 
