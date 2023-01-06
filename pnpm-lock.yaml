@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@tauri-apps/api': ^1.2.0
   '@tauri-apps/cli': ^1.2.2
+  '@types/ip': ^1.1.0
   '@types/node': ^18.11.18
   '@types/prettier': ^2.7.2
   '@types/react': ^18.0.26
@@ -12,6 +13,7 @@ specifiers:
   autoprefixer: ^10.4.7
   eslint: ^8.30.0
   eslint-config-next: 13.1.1
+  ip: ^1.1.8
   next: 13.1.1
   postcss: ^8.4.14
   prettier: ^2.8.1
@@ -24,6 +26,7 @@ specifiers:
 
 dependencies:
   '@tauri-apps/api': 1.2.0
+  ip: 1.1.8
   next: 13.1.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -31,6 +34,7 @@ dependencies:
 
 devDependencies:
   '@tauri-apps/cli': 1.2.2
+  '@types/ip': 1.1.0
   '@types/node': 18.11.18
   '@types/prettier': 2.7.2
   '@types/react': 18.0.26
@@ -370,6 +374,12 @@ packages:
       '@tauri-apps/cli-linux-x64-musl': 1.2.2
       '@tauri-apps/cli-win32-ia32-msvc': 1.2.2
       '@tauri-apps/cli-win32-x64-msvc': 1.2.2
+    dev: true
+
+  /@types/ip/1.1.0:
+    resolution: {integrity: sha512-dwNe8gOoF70VdL6WJBwVHtQmAX4RMd62M+mAB9HQFjG1/qiCLM/meRy95Pd14FYBbEDwCq7jgJs89cHpLBu4HQ==}
+    dependencies:
+      '@types/node': 18.11.18
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -1554,6 +1564,10 @@ packages:
       has: 1.0.3
       side-channel: 1.0.4
     dev: true
+
+  /ip/1.1.8:
+    resolution: {integrity: sha512-PuExPYUiu6qMBQb4l06ecm6T6ujzhmh+MeJcW9wa89PoAz5pvd4zPgN5WJV104mb6S2T1AwNIAaB70JNrLQWhg==}
+    dev: false
 
   /is-bigint/1.0.4:
     resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==}
