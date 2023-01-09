@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type NextPage } from "next";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import { useEffect } from "react";
 
-import { Get, Check } from "../backend/tasks/devices";
+import { Get } from "../backend/tasks/devices";
 
 // import { useStore } from "../backend/tasks/store";
 
@@ -13,7 +12,7 @@ const Home: NextPage = () => {
   // const [store, setStore] = useStore();
 
   useEffect(() => {
-    console.log(Check());
+    Get().then((res) => console.log(res) );
   }, []);
 
   return (

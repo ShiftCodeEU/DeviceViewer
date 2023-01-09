@@ -4,31 +4,40 @@ import ip from "ip";
 export const devicesArray: string[] = [];
 
 export const Get = async () => {
-  const localIP = ip.address();
-  const localIPPartial = localIP.toString().substring(0, localIP.length - 1);
+  let localIP = "";
+
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const invoke = require("@tauri-apps/api").invoke;
+  localIP = await invoke("get_local_ip")
+    .then((res: any) => {
+      return res[0];
+    })
+    .catch((e: any) => console.error("CheckError:", e));
+
+  const localIPPartialArray: any = localIP.toString().split(".");
+  const localIPPartial = `${localIPPartialArray[0]}.${localIPPartialArray[1]}.${localIPPartialArray[2]}`;
   const isPrivate = ip.isPrivate(localIP);
 
   let subnet: ip.SubnetInfo | null = null;
 
   if (isPrivate && ip.isV4Format(localIP) == true) {
-    subnet = ip.subnet(localIPPartial + "0", localIPPartial + "255");
+    subnet = ip.subnet(localIPPartial + ".0", localIPPartial + ".255");
   }
 
-  if (typeof window !== "undefined") {
-    const fetchDeviceResponse = async () => {
-      if (subnet !== null) {
-        for (
-          let i = ip.toLong(subnet.firstAddress);
-          i < ip.toLong(subnet.lastAddress) + 1;
-          i++
-        ) {
-          const currentIP = ip.fromLong(i);
-          devicesArray.push(currentIP);
-        }
+  const fetchDeviceResponse = async () => {
+    if (subnet !== null) {
+      for (
+        let i = ip.toLong(subnet.firstAddress);
+        i < ip.toLong(subnet.lastAddress) + 1;
+        i++
+      ) {
+        const currentIP = ip.fromLong(i);
+        devicesArray.push(currentIP);
       }
-    };
-    fetchDeviceResponse();
-  }
+    }
+  };
+  fetchDeviceResponse();
+
   return devicesArray;
 };
 
