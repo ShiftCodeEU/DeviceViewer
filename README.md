@@ -7,7 +7,7 @@
   <!-- <a href="#" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a> -->
-  <a href="https://github.comShiftCodeEU/DeviceViewer/actions/workflows/workspace-ci.yml">
+  <a href="https://github.com/ShiftCodeEU/DeviceViewer/actions/workflows/workspace-ci.yml">
     <img src="https://github.com/ShiftCodeEU/DeviceViewer/actions/workflows/workspace-ci.yml/badge.svg" alt="CI">
   </a>
 </p>
